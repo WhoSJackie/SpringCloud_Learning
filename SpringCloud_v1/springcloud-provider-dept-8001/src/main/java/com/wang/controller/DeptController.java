@@ -3,7 +3,9 @@ package com.wang.controller;
 import com.wang.repository.Dept;
 import com.wang.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import java.util.List;
 
