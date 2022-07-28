@@ -16,3 +16,19 @@ spring:
     username: root
     password: 123456
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: springcloud-provider-dept
+
+info:
+  app.name: whosjackie
+  company.name: wang
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
