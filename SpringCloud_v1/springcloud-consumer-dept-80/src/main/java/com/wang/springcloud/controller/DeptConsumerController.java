@@ -1,6 +1,6 @@
 package com.wang.springcloud.controller;
 
-import com.wang.repository.Dept;
+import com.wang.springcloud.repository.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -18,7 +18,8 @@ public class DeptConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final String REST_URL_PREFIX="http://localhost:8001";
+    // private static final String REST_URL_PREFIX="http://localhost:8001";
+    private static final String REST_URL_PREFIX ="http://SPRINGCLOUD-PROVIDER-DEPT";
 
 
     @RequestMapping("/add")
@@ -35,6 +36,7 @@ public class DeptConsumerController {
     public List<Dept> getList(){
         return restTemplate.getForObject(REST_URL_PREFIX+"/dept/list",List.class);
     }
+
 
 
 }

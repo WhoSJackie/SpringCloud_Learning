@@ -1,0 +1,38 @@
+server:
+  port: 9527
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: springcloud-gateway-9527
+          uri: lb://springcloud-provider-dept
+          predicates:
+            - Path=/dept/**
+  application:
+    name: springcloud-gateway
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: gateway-9527
+    prefer-ip-address: true
+
+info:
+  app.name: whosjackie
+  company.name: wang
+
+### springcloud2020.x之后不支持,转为gateway
+#zuul:
+#  routes:
+#    user-service:
+#      path: /springcloud-provider-dept/**
+#      url: http://127.0.0.1:8001
+#    springcloud-provider-dept.serviceId: springcloud-provider-dept
+#    springcloud-provider-dept.path: /mydept/**
+#  ignored-services: "*"
+
+

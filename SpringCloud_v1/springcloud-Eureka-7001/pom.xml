@@ -11,7 +11,6 @@
 
     <artifactId>springcloud-Eureka-7001</artifactId>
 
-    <packaging>war</packaging>
 
     <properties>
         <java.version>1.8</java.version>
